@@ -1,8 +1,8 @@
+import { createFileRoute } from "@tanstack/react-router"
 import ScrollDownBadge from "@/components/features/scroll-down-badge"
 import { ourServices } from "@/constants/service"
 import { createSeoTags } from "@/lib/seo"
 import { cn } from "@/lib/utils"
-import { createFileRoute } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/services")({
     head: () => ({
@@ -23,10 +23,10 @@ function ServicesPage() {
                 <div className="space-y-4 text-center lg:space-y-6">
                     <h1 className="text-3xl lg:text-[5rem]">Our Services</h1>
                     <p className="text-sm lg:text-lg">
-                        Welcome to Moniak, your partner in construction excellence. From
+                        Welcome to MoniAK, your partner in construction excellence. From
                         <br className="md-br" /> groundbreaking designs to meticulous renovations, we offer a
                         comprehensive
-                        <br className="md-br" /> range of services tailored to your needs. At Moniak, we don't just
+                        <br className="md-br" /> range of services tailored to your needs. At MoniAK, we don't just
                         build
                         <br className="md-br" /> structures; we create experiences.
                     </p>
@@ -50,18 +50,24 @@ function ServicesPage() {
                                 <p className="text-xs lg:text-lg">{service.description}</p>
                             </div>
 
-                            {service.images.map((image, index) => (
+                            {service.images.map((image, imageIndex) => (
                                 <img
-                                    key={image + index}
+                                    key={image + imageIndex}
                                     src={image}
-                                    alt={service.title + index}
+                                    alt={`${service.title} project detail`}
+                                    loading="lazy"
                                     className="hidden lg:block"
                                 />
                             ))}
                         </div>
 
                         <div className="aspect-square lg:flex-1">
-                            <img src={service.displayImage} alt={service.title} className="size-full object-cover" />
+                            <img
+                                src={service.displayImage}
+                                alt={`MoniAK ${service.title.toLowerCase()} service`}
+                                loading="lazy"
+                                className="size-full object-cover"
+                            />
                         </div>
                     </div>
                 ))}

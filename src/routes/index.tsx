@@ -1,4 +1,7 @@
-import QuoteForm from "@/components/features/forms/quote-form"
+import { Link, createFileRoute } from "@tanstack/react-router"
+import Autoplay from "embla-carousel-autoplay"
+import EnquiryDialog from "@/components/features/enquiry-dialog"
+import EnquiryForm from "@/components/features/forms/enquiry-form"
 import ScrollDownBadge from "@/components/features/scroll-down-badge"
 import { Button, buttonVariants } from "@/components/ui/button"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
@@ -15,8 +18,6 @@ import ArrowUpRight from "@/components/ui/icons/arrow-up-right"
 import { keyFeatures, recentProjects, services, trustedBy } from "@/constants"
 import { createSeoTags } from "@/lib/seo"
 import { cn } from "@/lib/utils"
-import { createFileRoute, Link } from "@tanstack/react-router"
-import Autoplay from "embla-carousel-autoplay"
 
 export const Route = createFileRoute("/")({
     head: () => ({
@@ -31,6 +32,13 @@ export const Route = createFileRoute("/")({
 })
 
 function App() {
+    const partnerLogoSizeClasses = {
+        tall: "max-h-[92px] max-w-[82px] md:max-h-[112px] md:max-w-[96px]",
+        wide: "max-h-[64px] max-w-[170px] md:max-h-[76px] md:max-w-[220px]",
+        standard: "max-h-[76px] max-w-[155px] md:max-h-[88px] md:max-w-[180px]",
+        square: "max-h-[92px] max-w-[92px] md:max-h-[108px] md:max-w-[108px]",
+    }
+
     return (
         <main>
             <header className="relative pt-6 pb-15 md:pt-10">
@@ -76,7 +84,7 @@ function App() {
                                 variant="secondary"
                                 className="mx-auto mt-8 h-auto w-fit rounded-lg px-6! py-3! text-sm font-semibold sm:px-8! sm:py-4! sm:text-base md:mt-10 md:px-10! md:py-5! md:text-lg"
                             >
-                                Get a quote <ArrowRight className="size-3" />
+                                Make an Enquiry <ArrowRight className="size-3" />
                             </Button>
                         </DialogTrigger>
 
@@ -111,7 +119,7 @@ function App() {
                                     Fill out the form and we&apos;ll be in touch as soon as possible.
                                 </h4>
 
-                                <QuoteForm />
+                                <EnquiryForm />
                             </div>
                         </DialogContent>
                     </Dialog>
@@ -127,7 +135,7 @@ function App() {
                                 Our Commitment to Sustainability.
                             </h2>
                             <p className="text-center text-sm lg:text-left lg:text-xl">
-                                At Moniak, we take pride in our commitment to sustainable practices and environmental
+                                At MoniAK, we take pride in our commitment to sustainable practices and environmental
                                 responsibility. As a forward-thinking company, we understand the importance of
                                 minimizing our ecological footprint and contributing to a greener future. Our
                                 sustainable initiatives encompass every aspect of our operations, from eco-friendly
@@ -152,13 +160,18 @@ function App() {
                     </div>
 
                     <div className="relative row-start-1 flex items-end lg:row-start-auto">
-                        <img src="/images/engineers-working.svg" alt="" className="size-full" />
+                        <img
+                            src="/images/engineers-working.svg"
+                            alt="Engineers collaborating on a construction project"
+                            loading="lazy"
+                            className="size-full"
+                        />
                         <ScrollDownBadge className="absolute right-0 block lg:hidden" />
                     </div>
                 </div>
 
                 <p className="mt-10 text-sm lg:text-xl">
-                    By choosing Moniak, you're not just selecting a construction
+                    By choosing MoniAK, you're not just selecting a construction
                     <br className="md-br" /> partner - you're choosing a team committed to building a
                     <br className="md-br" /> better and more sustainable future. Join us in creating
                     <br className="md-br" /> structures that stand the test of time while preserving our
@@ -166,15 +179,15 @@ function App() {
                 </p>
 
                 <div className="mt-10 flex items-end justify-center lg:mt-0 lg:justify-between">
-                    <Link
-                        to="/"
+                    <EnquiryDialog><button
+                        type="button"
                         className={cn(
                             buttonVariants({ variant: "secondary" }),
                             "h-auto rounded-lg px-10 font-semibold lg:py-5 lg:text-lg",
                         )}
                     >
-                        Request a demo
-                    </Link>
+                        Make an Enquiry
+                    </button></EnquiryDialog>
                     <ScrollDownBadge className="hidden lg:block" />
                 </div>
             </section>
@@ -188,7 +201,7 @@ function App() {
                         </div>
                         <div className="border-2 border-primary p-4 lg:border-0 lg:p-8">
                             <p className="text-sm lg:text-lg">
-                                Welcome to Moniak, your partner in construction excellence. From groundbreaking designs
+                                Welcome to MoniAK, your partner in construction excellence. From groundbreaking designs
                                 to meticulous renovations, we offer a comprehensive range of services
                             </p>
                         </div>
@@ -229,12 +242,13 @@ function App() {
                         className="w-full"
                     >
                         <CarouselContent>
-                            {recentProjects.map((image, index) => (
-                                <CarouselItem key={image + index} className="basis-1/2 md:basis-1/3 lg:basis-1/4">
+                            {recentProjects.map((project, index) => (
+                                <CarouselItem key={project.src + index} className="basis-1/2 md:basis-1/3 lg:basis-1/4">
                                     <img
-                                        src={image}
-                                        alt={`Recent project ${index + 1}`}
-                                        className="aspect-square size-full"
+                                        src={project.src}
+                                        alt={project.alt}
+                                        className="size-full"
+                                        loading="lazy"
                                     />
                                 </CarouselItem>
                             ))}
@@ -246,17 +260,41 @@ function App() {
             </section>
 
             {/* Trusted By */}
-            <section className="w-contain py-15">
-                <h3 className="mb-8 text-3xl text-white/50 text-outline lg:text-[2.8125rem]">Trusted By</h3>
+            <section className="bg-[#020d05] py-12 md:py-16">
+                <div className="w-contain">
+                    <h3 className="mb-8 text-3xl text-white/80 text-outline lg:text-[2.8125rem]">Trusted By</h3>
 
-                <div className="flex items-center gap-(--marquee-gap) overflow-hidden [--marquee-gap:calc(var(--spacing)*6)] lg:mask-x-from-90% lg:[--marquee-gap:calc(var(--spacing)*10)] hover:[&>:is(div)]:paused">
-                    {Array.from({ length: 2 }, (_, i) => (
-                        <div key={i} className="flex shrink-0 animate-marquee items-center gap-(--marquee-gap)">
-                            {trustedBy.map((image, index) => (
-                                <img key={image + index} src={image} alt="" className="h-11 shrink-0 lg:h-auto" />
-                            ))}
-                        </div>
-                    ))}
+                    <div className="flex items-center gap-(--marquee-gap) overflow-hidden [--marquee-gap:calc(var(--spacing)*10)] md:[--marquee-gap:calc(var(--spacing)*14)] lg:mask-x-from-90% hover:[&>:is(div)]:paused">
+                        {Array.from({ length: 2 }, (_, i) => (
+                            <div key={i} className="flex shrink-0 animate-marquee items-center gap-(--marquee-gap)">
+                                {trustedBy.map((partner, index) => (
+                                    <div
+                                        key={partner.name + index}
+                                        className="group flex h-[104px] min-w-[180px] shrink-0 items-center justify-center px-4 py-3 md:h-[132px] md:min-w-[220px] md:px-6"
+                                    >
+                                        {partner.image ? (
+                                            <img
+                                                src={partner.image}
+                                                alt={`${partner.name} logo`}
+                                                loading="lazy"
+                                                className={cn(
+                                                    "h-auto w-auto object-contain opacity-95 transition-[transform,filter,opacity] duration-300 group-hover:scale-105 group-hover:opacity-100",
+                                                    partnerLogoSizeClasses[partner.size],
+                                                    "invertOnDark" in partner &&
+                                                        partner.invertOnDark &&
+                                                        "brightness-0 invert",
+                                                )}
+                                            />
+                                        ) : (
+                                            <span className="max-w-[170px] text-center font-michroma text-xl font-semibold text-white/90 transition-transform duration-300 group-hover:scale-105 group-hover:text-white md:max-w-[210px] md:text-2xl">
+                                                {partner.name}
+                                            </span>
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </section>
         </main>

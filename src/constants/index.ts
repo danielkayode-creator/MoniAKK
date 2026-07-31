@@ -5,7 +5,7 @@ export const navLinks = [
     },
     {
         label: "ABOUT US",
-        to: "/about-us",
+        to: "/about",
     },
     {
         label: "SERVICES",
@@ -17,7 +17,7 @@ export const navLinks = [
     },
     {
         label: "CONTACT US",
-        to: "/contact-us",
+        to: "/contact",
     },
 ]
 
@@ -47,46 +47,51 @@ export const keyFeatures = [
 export const services = [
     {
         label: "Construction",
-        to: "/",
+        to: "/services",
     },
     {
         label: "Renovation",
-        to: "/",
+        to: "/services",
     },
     {
         label: "Engineering Design",
-        to: "/",
+        to: "/services",
     },
     {
         label: "Project Management",
-        to: "/",
+        to: "/services",
     },
 ]
 
 export const recentProjects = [
-    "/images/recent-project-1.svg",
-    "/images/recent-project-2.svg",
-    "/images/recent-project-3.svg",
-    "/images/recent-project-4.svg",
-    "/images/recent-project-1.svg",
-    "/images/recent-project-2.svg",
-    "/images/recent-project-3.svg",
-    "/images/recent-project-4.svg",
+    { src: "/images/proposed-apapa-lga.png", alt: "Apapa multipurpose building project" },
+    { src: "/images/nmpw.png", alt: "Non-motorized pedestrian walkway project" },
+    { src: "/images/yala-heights.png", alt: "Yala Heights multi-storey development" },
+    { src: "/images/gate-house.png", alt: "Rail corridor gate house replacement project" },
+    { src: "/images/iju-station-building.png", alt: "Iju railway station building project" },
+    { src: "/images/mushin-primary-school.png", alt: "Mushin Primary School reconstruction project" },
 ]
 
-export const trustedBy = [
-    "/images/aec.svg",
-    "/images/crcc.svg",
-    "/images/ronchess.svg",
-    "/images/dar.svg",
-    "/images/perkins.svg",
-    "/images/aec.svg",
-    "/images/crcc.svg",
-    "/images/ronchess.svg",
-    "/images/dar.svg",
-    "/images/perkins.svg",
-]
+export type PartnerLogo = {
+    name: string
+    image: string | null
+    size: "wide" | "standard" | "square" | "tall"
+    invertOnDark?: boolean
+}
 
+export const trustedBy: ReadonlyArray<PartnerLogo> = [
+    { name: "AEC", image: "/images/aec.svg", size: "wide" },
+    { name: "CCECC", image: "/images/CCECC.png", size: "square" },
+    { name: "Nexant", image: "/images/Nexant.PNG", size: "wide" },
+    { name: "VeocTech", image: "/images/Veoctech.png", size: "tall" },
+    { name: "LAMATA", image: "/images/LAMATA.jpg", size: "square" },
+    { name: "AR Railink", image: null, size: "wide" },
+    {
+        name: "Nexant Construction & Development Arm",
+        image: "/images/Nexant.PNG",
+        size: "wide",
+    },
+]
 export const footerLinks = [
     {
         title: "Company",
@@ -97,7 +102,7 @@ export const footerLinks = [
             },
             {
                 label: "About Us",
-                to: "/about-us",
+                to: "/about",
             },
             {
                 label: "Services",
@@ -109,7 +114,7 @@ export const footerLinks = [
             },
             {
                 label: "Contact Us",
-                to: "/contact-us",
+                to: "/contact",
             },
         ],
     },
@@ -118,19 +123,19 @@ export const footerLinks = [
         links: [
             {
                 label: "Construction",
-                to: "/services/construction",
+                to: "/services",
             },
             {
                 label: "Renovation",
-                to: "/services/renovation",
+                to: "/services",
             },
             {
                 label: "Project Management",
-                to: "/services/project-management",
+                to: "/services",
             },
             {
                 label: "Engineering Design",
-                to: "/services/engineering-design",
+                to: "/services",
             },
         ],
     },

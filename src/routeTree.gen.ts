@@ -10,7 +10,8 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ServicesRouteImport } from './routes/services'
-import { Route as AboutUsRouteImport } from './routes/about-us'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProjectsIndexRouteImport } from './routes/projects/index'
 import { Route as ProjectsSlugRouteImport } from './routes/projects/$slug'
@@ -20,9 +21,14 @@ const ServicesRoute = ServicesRouteImport.update({
   path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AboutUsRoute = AboutUsRouteImport.update({
-  id: '/about-us',
-  path: '/about-us',
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -43,14 +49,16 @@ const ProjectsSlugRoute = ProjectsSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/about-us': typeof AboutUsRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
   '/services': typeof ServicesRoute
   '/projects/$slug': typeof ProjectsSlugRoute
   '/projects/': typeof ProjectsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/about-us': typeof AboutUsRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
   '/services': typeof ServicesRoute
   '/projects/$slug': typeof ProjectsSlugRoute
   '/projects': typeof ProjectsIndexRoute
@@ -58,20 +66,34 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/about-us': typeof AboutUsRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
   '/services': typeof ServicesRoute
   '/projects/$slug': typeof ProjectsSlugRoute
   '/projects/': typeof ProjectsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about-us' | '/services' | '/projects/$slug' | '/projects/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/services'
+    | '/projects/$slug'
+    | '/projects/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about-us' | '/services' | '/projects/$slug' | '/projects'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/services'
+    | '/projects/$slug'
+    | '/projects'
   id:
     | '__root__'
     | '/'
-    | '/about-us'
+    | '/about'
+    | '/contact'
     | '/services'
     | '/projects/$slug'
     | '/projects/'
@@ -79,7 +101,8 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AboutUsRoute: typeof AboutUsRoute
+  AboutRoute: typeof AboutRoute
+  ContactRoute: typeof ContactRoute
   ServicesRoute: typeof ServicesRoute
   ProjectsSlugRoute: typeof ProjectsSlugRoute
   ProjectsIndexRoute: typeof ProjectsIndexRoute
@@ -94,11 +117,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/about-us': {
-      id: '/about-us'
-      path: '/about-us'
-      fullPath: '/about-us'
-      preLoaderRoute: typeof AboutUsRouteImport
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -127,7 +157,8 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AboutUsRoute: AboutUsRoute,
+  AboutRoute: AboutRoute,
+  ContactRoute: ContactRoute,
   ServicesRoute: ServicesRoute,
   ProjectsSlugRoute: ProjectsSlugRoute,
   ProjectsIndexRoute: ProjectsIndexRoute,

@@ -1,9 +1,11 @@
+import { Link, createFileRoute } from "@tanstack/react-router"
+import ProjectsInMotion from "@/components/features/projects-in-motion"
+import EnquiryDialog from "@/components/features/enquiry-dialog"
 import { buttonVariants } from "@/components/ui/button"
 import ArrowRight from "@/components/ui/icons/arrow-right"
 import { ourProjects } from "@/constants/projects"
 import { createSeoTags } from "@/lib/seo"
 import { cn } from "@/lib/utils"
-import { createFileRoute, Link } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/projects/")({
     head: () => ({
@@ -50,15 +52,18 @@ function ProjectsPage() {
                 ))}
             </section>
 
+            <ProjectsInMotion />
+
             <div className="w-contain flex justify-center py-15">
-                <Link
-                    to="/"
+                <EnquiryDialog><button
+                    type="button"
                     className={cn(buttonVariants({ variant: "secondary" }), "lg:h-17.5! lg:w-3/5 lg:text-2xl")}
                 >
-                    Get a quote
+                    Make an Enquiry
                     <ArrowRight />
-                </Link>
+                </button></EnquiryDialog>
             </div>
         </main>
     )
 }
+

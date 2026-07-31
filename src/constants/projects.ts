@@ -20,7 +20,7 @@ export const ourProjects = [
         description: {
             brief: "Builds safe under-bridge pedestrian walkways along the Lagos Red Line corridor.",
             details:
-                "The Non-Motorized Pedestrian Walkway (NMPW) Project is LAMATA's flagship sustainable mobility initiative along the Lagos Red Line corridor, covering Oyingbo, Yaba, Mushin, and Ikeja. Designed as a clean, green solution to reduce carbon emissions and improve air quality, it transforms under-bridge spaces into safe pedestrian pathways. MoniAk has been appointed as the Principal Contractor to construct and deliver these facilities, including all associated civil, structural, and finishing works, breathing new life into these high-density areas.",
+                "The Non-Motorized Pedestrian Walkway (NMPW) Project is LAMATA's flagship sustainable mobility initiative along the Lagos Red Line corridor, covering Oyingbo, Yaba, Mushin, and Ikeja. Designed as a clean, green solution to reduce carbon emissions and improve air quality, it transforms under-bridge spaces into safe pedestrian pathways. MoniAK has been appointed as the Principal Contractor to construct and deliver these facilities, including all associated civil, structural, and finishing works, breathing new life into these high-density areas.",
         },
         designObjective: ["Building Layout", "Accessibility", "Sustainability", "Amenities"],
         projectScope: null,
@@ -35,7 +35,7 @@ export const ourProjects = [
         description: {
             brief: "Completed mixed-use multi-storey development delivered to modern safety and efficiency standards",
             details:
-                "The Yala Heights Multi-Storey Building is a landmark mixed-use development in Apapa, delivered as a modern and aesthetically refined structure. Completed in 2023 for client Boxberry, the project meets contemporary standards of safety, sustainability, and operational efficiency. Designed to support residential use, it provides high-quality living spaces that respond to the evolving demands of urban development within the Apapa Corridor. Moni-Akmega Integrated Project Construction Company served as the Principal Contractor and Lead Designer, ensuring seamless end-to-end delivery.",
+                "The Yala Heights Multi-Storey Building is a landmark mixed-use development in Apapa, delivered as a modern and aesthetically refined structure. Completed in 2023 for client Boxberry, the project meets contemporary standards of safety, sustainability, and operational efficiency. Designed to support residential use, it provides high-quality living spaces that respond to the evolving demands of urban development within the Apapa Corridor. MoniAK Integrated Project Construction Company served as the Principal Contractor and Lead Designer, ensuring seamless end-to-end delivery.",
         },
         designObjective: null,
         projectScope: [

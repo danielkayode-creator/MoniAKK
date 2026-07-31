@@ -1,8 +1,8 @@
+import { Link, useLocation } from "@tanstack/react-router"
+import { useCallback, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { navLinks } from "@/constants"
 import { cn } from "@/lib/utils"
-import { Link, useLocation } from "@tanstack/react-router"
-import { useCallback, useState } from "react"
 
 const Navbar = () => {
     const { pathname } = useLocation()
@@ -23,7 +23,7 @@ const Navbar = () => {
             <div className="w-contain flex flex-col py-2 lg:py-4">
                 <div className="flex items-center justify-between">
                     <Link to="/">
-                        <img src="/images/logo.svg" alt="" />
+                        <img src="/images/logo.svg" alt="MoniAK home" />
                     </Link>
 
                     <ul className="absolute left-1/2 hidden -translate-x-1/2 gap-10 lg:flex">

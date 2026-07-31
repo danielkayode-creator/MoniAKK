@@ -1,7 +1,7 @@
-import type { LenisRef } from "lenis/react"
 import { ReactLenis } from "lenis/react"
 import { cancelFrame, frame } from "motion/react"
 import { useEffect, useRef } from "react"
+import type { LenisRef } from "lenis/react"
 
 const SmoothScroll = () => {
     const lenisRef = useRef<LenisRef>(null)

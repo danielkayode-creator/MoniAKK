@@ -2,10 +2,10 @@ import { TanStackDevtools } from "@tanstack/react-devtools"
 import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router"
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools"
 
+import appCss from "../styles.css?url"
 import SmoothScroll from "@/components/features/smooth-scroll"
 import Footer from "@/components/layout/footer"
 import Navbar from "@/components/layout/navbar"
-import appCss from "../styles.css?url"
 
 export const Route = createRootRoute({
     head: () => ({

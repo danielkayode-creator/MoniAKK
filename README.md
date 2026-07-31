@@ -1,6 +1,6 @@
 # MoniAK - Construction & Engineering Company Website
 
-A modern, responsive website for Moni-Akmega Integrated Project Construction Company (MoniAK), showcasing their construction projects, services, and company information.
+A modern, responsive website for MoniAK Integrated Project Construction Company (MoniAK), showcasing their construction projects, services, and company information.
 
 ## 🏗️ About
 
@@ -118,5 +118,5 @@ pnpm dlx shadcn@latest add [component-name]
 - **Animations** - Polished UI animations powered by Motion
 - **Dynamic Project Pages** - Individual project detail pages with slug-based routing
 - **Interactive Carousels** - Project and team member showcases
-- **Contact Form** - Newsletter subscription and project inquiry forms
+- **Contact Form** - Project enquiry form
 - **SEO Ready** - Proper meta tags and semantic HTML

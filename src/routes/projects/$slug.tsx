@@ -1,9 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unnecessary-condition */
+import { Link, createFileRoute } from "@tanstack/react-router"
 import { buttonVariants } from "@/components/ui/button"
 import ArrowLeft from "@/components/ui/icons/arrow-left"
 import { ourProjects } from "@/constants/projects"
 import { createSeoTags } from "@/lib/seo"
 import { cn } from "@/lib/utils"
-import { createFileRoute, Link } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/projects/$slug")({
     loader: ({ params }) => {
@@ -73,7 +74,10 @@ function ProjectPage() {
 
                     <div className="hide-scrollbar flex items-center gap-2 overflow-auto lg:justify-center lg:gap-8">
                         {project.designObjective.map((objective, index) => (
-                            <div key={objective + index} className="shrink-0 rounded-full bg-primary px-4 py-2 lg:px-8 lg:py-4">
+                            <div
+                                key={objective + index}
+                                className="shrink-0 rounded-full bg-primary px-4 py-2 lg:px-8 lg:py-4"
+                            >
                                 <p className="text-sm lg:text-2xl">{objective}</p>
                             </div>
                         ))}
@@ -82,14 +86,14 @@ function ProjectPage() {
             )}
 
             {/* Project Scope Section - Optional */}
-            {project.projectScope && project.projectScope.length > 0 && (
+            {project.projectScope && (
                 <section className="w-contain space-y-6 py-10 lg:py-15">
                     <h2 className="text-xl lg:text-3xl">Project Scope</h2>
                     {project.projectScope.map((scope, index) => (
                         <div key={scope.image + index} className="grid items-center gap-8 lg:grid-cols-2">
                             <ul className="list-inside list-disc space-y-2 text-sm lg:text-2xl">
-                                {scope.items.map((item, index) => (
-                                    <li key={item + index}>{item}</li>
+                                {scope.items.map((item, itemIndex) => (
+                                    <li key={item + itemIndex}>{item}</li>
                                 ))}
                             </ul>
                             {scope.image && (

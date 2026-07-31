@@ -1,27 +1,15 @@
-import NewsletterForm from "@/components/features/forms/newsletter-form"
-import { footerLinks, socialLinks } from "@/constants"
 import { Link } from "@tanstack/react-router"
+import { footerLinks, socialLinks } from "@/constants"
 
 const Footer = () => {
     return (
         <footer>
-            {/* Subscribe to our Quarterly Newsletter */}
-            <section className="bg-[linear-gradient(0deg,rgba(0,0,0,0.2),rgba(0,0,0,0.2)),linear-gradient(0deg,rgba(0,0,0,0.4),rgba(0,0,0,0.4)),linear-gradient(180deg,rgba(0,0,0,0.53)_0.48%,rgba(0,0,0,0)_100%),url('/images/newsletter-bg.png')] bg-cover bg-center py-15 lg:px-15">
-                <div className="w-contain flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
-                    <p className="text-center font-bold lg:text-left lg:text-xl">
-                        Subscribe to our Quarterly Newsletter
-                    </p>
-
-                    <NewsletterForm />
-                </div>
-            </section>
-
             {/* Links */}
             <section className="bg-primary pt-15 pb-15 lg:pb-30">
                 <div className="w-contain flex flex-col gap-10 border-b border-white pb-5 lg:flex-row lg:gap-30">
                     <div className="flex flex-2/5 flex-col gap-6">
                         <Link to="/" className="w-fit">
-                            <img src="/images/logo.svg" alt="Moniak Logo" />
+                            <img src="/images/logo.svg" alt="MoniAK logo" />
                         </Link>
                         <p className="text-sm lg:text-lg">
                             Each project we undertake is more than just
@@ -38,8 +26,8 @@ const Footer = () => {
                                         {section.title}
                                     </h3>
                                     <ul className="space-y-2 lg:space-y-3">
-                                        {section.links.map((link, index) => (
-                                            <li key={link.label + index} className="whitespace-nowrap">
+                                        {section.links.map((link, linkIndex) => (
+                                            <li key={link.label + linkIndex} className="whitespace-nowrap">
                                                 <Link to={link.to} className="text-sm lg:text-xl">
                                                     {link.label}
                                                 </Link>
