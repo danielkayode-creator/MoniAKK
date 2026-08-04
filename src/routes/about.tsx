@@ -1,5 +1,6 @@
-import { Link, createFileRoute } from "@tanstack/react-router"
+﻿import { Link, createFileRoute } from "@tanstack/react-router"
 import { ArrowUpLeft } from "lucide-react"
+import LeadershipSection from "@/components/features/leadership/leadership-section"
 import ScrollDownBadge from "@/components/features/scroll-down-badge"
 import { buttonVariants } from "@/components/ui/button"
 import { missionAndVision, whatWeOffer } from "@/constants/about-us"
@@ -95,6 +96,8 @@ function RouteComponent() {
                     ))}
                 </div>
             </section>
+
+            <LeadershipSection />
 
         </main>
     )

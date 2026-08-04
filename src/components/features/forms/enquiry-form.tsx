@@ -1,4 +1,4 @@
-﻿"use client"
+"use client"
 
 import { standardSchemaResolver } from "@hookform/resolvers/standard-schema"
 import { useForm } from "react-hook-form"
@@ -45,7 +45,7 @@ const projectTypes = [
     { value: "other", label: "Other Enquiry" },
 ]
 
-const EnquiryForm = () => {
+const EnquiryForm = ({ projectName }: { projectName?: string }) => {
     const [feedback, setFeedback] = useState<{ type: "success" | "error"; text: string } | null>(null)
     const form = useForm<TEnquiryFormData>({
         resolver: standardSchemaResolver(enquirySchema),
@@ -54,7 +54,7 @@ const EnquiryForm = () => {
             email: "",
             telephone: "",
             projectType: "",
-            message: "",
+            message: projectName ? `I would like to enquire about ${projectName}.` : "",
             marketingConsent: false,
         },
     })

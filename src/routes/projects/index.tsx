@@ -42,10 +42,19 @@ function ProjectsPage() {
                         params={{ slug: project.slug }}
                         className="relative aspect-square overflow-hidden rounded-2xl"
                     >
-                        <img src={project.images.displayImage} alt={project.title} className="size-full object-cover" />
+                        <img
+                            src={project.images.displayImage}
+                            alt={project.images.alt?.[0] ?? project.title}
+                            className="size-full object-cover"
+                        />
                         <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent" />
                         <div className="absolute bottom-0 left-0 flex flex-col gap-2 px-4 pb-4 lg:px-8 lg:pb-10">
                             <h5 className="font-montserrat text-xl font-semibold lg:text-2xl">{project.title}</h5>
+                            {project.serviceCategory && (
+                                <p className="text-xs font-semibold uppercase tracking-wide lg:text-sm">
+                                    {project.serviceCategory}
+                                </p>
+                            )}
                             <p className="text-xs lg:text-base">{project.description.brief}</p>
                         </div>
                     </Link>

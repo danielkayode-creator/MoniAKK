@@ -1,4 +1,15 @@
-export const ourProjects = [
+﻿export type Project = {
+    slug: string
+    title: string
+    serviceCategory?: string
+    description: { brief: string; details: string }
+    overview?: string
+    designObjective: Array<string> | null
+    projectScope: Array<{ items: Array<string>; image?: string }> | null
+    services?: Array<{ title: string; description: string }>
+    images: { displayImage: string; gallery: Array<string>; alt?: Array<string> }
+}
+export const ourProjects: Array<Project> = [
     {
         slug: "apapa-lga-multipurpose-building",
         title: "Proposed Apapa Local Government New Multi-Propose Building",
@@ -30,34 +41,40 @@ export const ourProjects = [
         },
     },
     {
-        slug: "yala-heights-building",
-        title: "Construction of YALA-HEIGHTS Multi Storey Building",
+        slug: "yala-heights",
+        title: "Yala Heights",
+        serviceCategory: "Structural Design and Construction",
         description: {
-            brief: "Completed mixed-use multi-storey development delivered to modern safety and efficiency standards",
+            brief:
+                "A residential development supported by MoniAK through structural design and construction services.",
             details:
-                "The Yala Heights Multi-Storey Building is a landmark mixed-use development in Apapa, delivered as a modern and aesthetically refined structure. Completed in 2023 for client Boxberry, the project meets contemporary standards of safety, sustainability, and operational efficiency. Designed to support residential use, it provides high-quality living spaces that respond to the evolving demands of urban development within the Apapa Corridor. MoniAK Integrated Project Construction Company served as the Principal Contractor and Lead Designer, ensuring seamless end-to-end delivery.",
+                "Yala Heights is a residential development for which MoniAK provided structural design and construction services. The project reflects the companyï¿½s integrated approach to engineering design, structural coordination, and construction delivery.",
         },
+        overview:
+            "Yala Heights is a residential development delivered with MoniAKï¿½s involvement in both structural design and construction. The engagement combined structural engineering input with coordinated construction execution to support the projectï¿½s architectural intent and overall delivery.",
         designObjective: null,
-        projectScope: [
+        projectScope: null,
+        services: [
             {
-                items: [
-                    "Architectural design, structural engineering, and building",
-                    "Detailed design development and construction documentation",
-                    "Statutory approvals and regulatory compliance coordination",
-                    "Procurement of materials, equipment, and specialist subcontractors",
-                    "Construction and execution of all civil, structural, architectural, mechanical, and electrical works",
-                    "Quality control and quality assurance in line with approved standards and specifications",
-                    "Health, Safety, Security, and Environmental (HSSE) management",
-                    "Project planning, scheduling, cost control, and risk management",
-                    "Site supervision, coordination, and stakeholder management",
-                    "Testing, commissioning, and final handover of the completed facility",
-                ],
-                image: "/images/yala-heights-scope-1.png",
+                title: "Structural Design",
+                description:
+                    "Development and coordination of the structural design required to support the buildingï¿½s architectural and functional requirements.",
+            },
+            {
+                title: "Construction",
+                description:
+                    "Execution and coordination of the construction works in accordance with the approved design and project requirements.",
             },
         ],
         images: {
-            displayImage: "/images/yala-heights.png",
-            gallery: ["/images/yala-heights-1.png", "/images/yala-heights-2.png"],
+            displayImage: "/images/1.jpg",
+            gallery: ["/images/1.jpg", "/images/2.jpg", "/images/3.jpg", "/images/4.jpg"],
+            alt: [
+                "Yala Heights architectural exterior view",
+                "Yala Heights development aerial rendering",
+                "Yala Heights residential building exterior",
+                "Yala Heights outdoor amenity and pool area",
+            ],
         },
     },
     {

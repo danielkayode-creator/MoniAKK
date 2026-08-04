@@ -10,7 +10,7 @@ export const ourServices = [
         title: "Renovation",
         description:
             "Transforming spaces into visions of excellence, MoniAK excels not only in groundbreaking construction but also in meticulous renovations. Our expertise extends beyond building anew; we specialize in breathing fresh life into existing structures. Whether it's a revitalized office space, a modernized home, or a revamped commercial facility, MoniAK is your trusted partner for seamless and stunning renovations. Elevate your space with us, where innovation meets craftsmanship.",
-        displayImage: "/images/renovation-display.png",
+        displayImage: "/images/renovation-display1.png",
         images: ["/images/renovation-1.png"],
     },
     {
