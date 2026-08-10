@@ -8,7 +8,7 @@ export const Route = createFileRoute("/contact")({
     component: ContactPage,
 })
 
-const details = { address: "To be provided", phone: "09066788675", phoneHref: "tel:+2349066788675", email: "moniak@project.com", emailHref: "mailto:moniak@project.com", hours: "To be provided" }
+const details = { address: "No 2, Faneye Street, Off Borno Way, Alagomeji, Yaba, Lagos", phone: "09066788675", phoneHref: "tel:+2349066788675", email: "moniak@project.com", emailHref: "mailto:moniak@project.com", hours: "8am–5pm" }
 const cards = [
     { label: "Office Address", value: details.address, icon: MapPin },
     { label: "Telephone", value: details.phone, href: details.phoneHref, icon: Phone },
