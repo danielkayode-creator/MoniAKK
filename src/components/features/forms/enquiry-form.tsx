@@ -7,6 +7,7 @@ import { CheckCircle2, LoaderCircle } from "lucide-react"
 import { z } from "zod/v4"
 
 import { Link } from "@tanstack/react-router"
+import { contactDetails } from "@/constants"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import FormField from "@/components/ui/form-field"
@@ -33,7 +34,7 @@ async function submitEnquiry(data: TEnquiryFormData) {
         return "sent"
     }
     const body = [data.name, data.email, data.telephone, data.projectType, "", data.message].join("\n")
-    window.location.href = "mailto:moniak@project.com?subject=Project%20enquiry&body=" + encodeURIComponent(body)
+    window.location.href = `${contactDetails.email.href}?subject=Project%20enquiry&body=${encodeURIComponent(body)}`
     return "email"
 }
 

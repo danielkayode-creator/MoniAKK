@@ -87,6 +87,13 @@ export const trustedBy: ReadonlyArray<PartnerLogo> = [
     { name: "Nexant", image: "/images/nexant1.PNG", size: "nexant" },
     { name: "VeocTech", image: "/images/VeocTech.png", size: "veoctech" },
 ]
+export const contactDetails = {
+    email: { label: "Email Us", value: "info@moniakgroup.com", href: "mailto:info@moniakgroup.com" },
+    phone: { label: "Call Us", value: "+234 813 465 2742", href: "tel:+2348134652742" },
+    whatsapp: { label: "WhatsApp Us", value: "+234 908 330 1780", href: "https://wa.me/2349083301780" },
+    address: "No 2, Faneye Street, Off Borno Way, Alagomeji, Yaba, Lagos",
+    hours: "8am–5pm",
+} as const
 export const footerLinks = [
     {
         title: "Company",
@@ -138,16 +145,16 @@ export const footerLinks = [
         title: "Contact Us",
         links: [
             {
-                label: "09066788675",
-                to: "tel:+2349066788675",
+                label: contactDetails.phone.value,
+                to: contactDetails.phone.href,
             },
             {
-                label: "09066788675",
-                to: "tel:+2349066788675",
+                label: contactDetails.whatsapp.value,
+                to: contactDetails.whatsapp.href,
             },
             {
-                label: "moniak@project.com",
-                to: "mailto:moniak@project.com",
+                label: contactDetails.email.value,
+                to: contactDetails.email.href,
             },
         ],
     },

@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router"
-import { footerLinks, socialLinks } from "@/constants"
+import { contactDetails, footerLinks, socialLinks } from "@/constants"
 
 const Footer = () => {
     return (
@@ -56,8 +56,8 @@ const Footer = () => {
                 <div className="w-contain flex items-center justify-center">
                     <p className="text-center text-sm lg:text-lg">
                         Copyright @ 2024:{" "}
-                        <a href="mailto:moniak@project.com" className="text-[#20A91E]">
-                            moniak@project.com
+                        <a href={contactDetails.email.href} className="text-[#20A91E]">
+                            {contactDetails.email.value}
                         </a>
                         . All Rights Reserved.
                     </p>

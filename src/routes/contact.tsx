@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router"
 import { Building2, Clock3, Handshake, Mail, MapPin, Phone } from "lucide-react"
 import EnquiryForm from "@/components/features/forms/enquiry-form"
+import { contactDetails } from "@/constants"
 import { createSeoTags } from "@/lib/seo"
 
 export const Route = createFileRoute("/contact")({
@@ -8,13 +9,12 @@ export const Route = createFileRoute("/contact")({
     component: ContactPage,
 })
 
-const details = { address: "No 2, Faneye Street, Off Borno Way, Alagomeji, Yaba, Lagos", phone: "09066788675", phoneHref: "tel:+2349066788675", email: "moniak@project.com", emailHref: "mailto:moniak@project.com", hours: "8am–5pm" }
 const cards = [
-    { label: "Office Address", value: details.address, icon: MapPin },
-    { label: "Telephone", value: details.phone, href: details.phoneHref, icon: Phone },
-    { label: "Email Address", value: details.email, href: details.emailHref, icon: Mail },
-    { label: "Office Hours", value: details.hours, icon: Clock3 },
-    { label: "Corporate Enquiries", value: details.email, href: details.emailHref, icon: Building2 },
+    { label: "Office Address", value: contactDetails.address, icon: MapPin },
+    { label: contactDetails.phone.label, value: contactDetails.phone.value, href: contactDetails.phone.href, icon: Phone },
+    { label: contactDetails.email.label, value: contactDetails.email.value, href: contactDetails.email.href, icon: Mail },
+    { label: "Office Hours", value: contactDetails.hours, icon: Clock3 },
+    { label: contactDetails.whatsapp.label, value: contactDetails.whatsapp.value, href: contactDetails.whatsapp.href, icon: Building2 },
 ]
 function ContactPage() {
     return <main>
