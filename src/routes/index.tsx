@@ -33,10 +33,12 @@ export const Route = createFileRoute("/")({
 
 function App() {
     const partnerLogoSizeClasses = {
-        tall: "max-h-[92px] max-w-[82px] md:max-h-[112px] md:max-w-[96px]",
-        wide: "max-h-[64px] max-w-[170px] md:max-h-[76px] md:max-w-[220px]",
-        standard: "max-h-[76px] max-w-[155px] md:max-h-[88px] md:max-w-[180px]",
-        square: "max-h-[92px] max-w-[92px] md:max-h-[108px] md:max-w-[108px]",
+        aec: "max-h-[70px] max-w-[160px] md:max-h-[85px] md:max-w-[190px]",
+        railink: "max-h-[65px] max-w-[170px] md:max-h-[75px] md:max-w-[200px]",
+        ccecc: "max-h-[110px] max-w-[145px] md:max-h-[130px] md:max-w-[170px]",
+        lamata: "max-h-[85px] max-w-[105px] md:max-h-[100px] md:max-w-[125px]",
+        nexant: "max-h-[60px] max-w-[190px] md:max-h-[72px] md:max-w-[230px]",
+        veoctech: "max-h-[100px] max-w-[115px] md:max-h-[120px] md:max-w-[135px]",
     }
 
     return (
@@ -264,13 +266,13 @@ function App() {
                 <div className="w-contain">
                     <h3 className="mb-8 text-3xl text-white/80 text-outline lg:text-[2.8125rem]">Trusted By</h3>
 
-                    <div className="flex items-center gap-(--marquee-gap) overflow-hidden [--marquee-gap:calc(var(--spacing)*10)] md:[--marquee-gap:calc(var(--spacing)*14)] lg:mask-x-from-90% hover:[&>:is(div)]:paused">
+                    <div className="flex items-center gap-(--marquee-gap) overflow-hidden [--marquee-gap:calc(var(--spacing)*6)] md:[--marquee-gap:calc(var(--spacing)*8)] lg:[--marquee-gap:calc(var(--spacing)*10)] lg:mask-x-from-90% hover:[&>:is(div)]:paused">
                         {Array.from({ length: 2 }, (_, i) => (
                             <div key={i} className="flex shrink-0 animate-marquee items-center gap-(--marquee-gap)">
                                 {trustedBy.map((partner, index) => (
                                     <div
                                         key={partner.name + index}
-                                        className="group flex h-[104px] min-w-[180px] shrink-0 items-center justify-center px-4 py-3 md:h-[132px] md:min-w-[220px] md:px-6"
+                                        className="group flex h-[110px] min-w-[150px] shrink-0 items-center justify-center px-3 py-2 md:h-[132px] md:min-w-[175px] md:px-4"
                                     >
                                         {partner.image ? (
                                             <img

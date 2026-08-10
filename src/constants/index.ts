@@ -75,22 +75,17 @@ export const recentProjects = [
 export type PartnerLogo = {
     name: string
     image: string | null
-    size: "wide" | "standard" | "square" | "tall"
+    size: "aec" | "railink" | "ccecc" | "lamata" | "nexant" | "veoctech"
     invertOnDark?: boolean
 }
 
 export const trustedBy: ReadonlyArray<PartnerLogo> = [
-    { name: "AEC", image: "/images/aec.svg", size: "wide" },
-    { name: "CCECC", image: "/images/CCECC.png", size: "square" },
-    { name: "Nexant", image: "/images/Nexant.PNG", size: "wide" },
-    { name: "VeocTech", image: "/images/Veoctech.png", size: "tall" },
-    { name: "LAMATA", image: "/images/LAMATA.jpg", size: "square" },
-    { name: "AR Railink", image: null, size: "wide" },
-    {
-        name: "Nexant Construction & Development Arm",
-        image: "/images/Nexant.PNG",
-        size: "wide",
-    },
+    { name: "AEC", image: "/images/AEC.PNG", size: "aec" },
+    { name: "AI RAILLINK", image: "/images/AI RAILLINK.PNG", size: "railink" },
+    { name: "CCECC", image: "/images/CCECC-transparent-white-text.png", size: "ccecc" },
+    { name: "LAMATA", image: "/images/LAMATA-transparent.png", size: "lamata" },
+    { name: "Nexant", image: "/images/nexant1.PNG", size: "nexant" },
+    { name: "VeocTech", image: "/images/VeocTech.png", size: "veoctech" },
 ]
 export const footerLinks = [
     {
