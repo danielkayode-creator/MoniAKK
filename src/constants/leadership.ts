@@ -14,6 +14,7 @@ export const leadershipOverview = [
     "MoniAK is built on the joint leadership of Engr. Rofiat SULAIMON and Toks AKINBADE, combining design excellence with practical construction delivery expertise.",
     "Engr. Rofiat SULAIMON drives the design vision, technical coordination and engineering-quality focus, while Toks AKINBADE drives construction delivery, site execution, HSE, project management and client-side delivery control. Together, they shape MoniAK's strategy, business development, client relations, procurement discipline, quality assurance and end-to-end delivery performance.",
     "They are supported by a trusted pool of specialist consultants and key team members whose expertise reflects MoniAK's core services: construction planning support, logistics, procurement support, personnel management, project delivery and Design & Build implementation.",
+    "With over 30 years of combined experience, the leadership team is committed to delivering safe, compliant, client-focused, and value-driven projects across Nigeria’s building, infrastructure, and development sectors.",
 ]
 
 export const leadershipModel = [
@@ -48,7 +49,7 @@ export const leadershipProfiles: Array<LeadershipProfile> = [
         name: "Toks AKINBADE",
         role: "Lead, Construction",
         summary: "A senior project-delivery and construction-management professional with UK and Nigerian delivery experience.",
-        background: ["Toks AKINBADE is a senior project-delivery and construction-management professional with infrastructure construction experience in the UK and Nigeria. His experience covers construction management, HSE leadership, project planning, contract administration, site supervision, project assurance, stakeholder management and delivery controls.", "His collaboration with Engr. Rofiat SULAIMON combines design leadership with construction-delivery discipline and end-to-end project delivery experience."],
+        background: ["Toks AKINBADE is a senior project-delivery and construction-management professional with infrastructure construction experience in the UK and Nigeria. His experience covers construction management, HSE leadership, project planning, contract administration, site supervision, project assurance, stakeholder management and delivery controls.", "He leads Moni-AK’s construction delivery discipline and conglomerates Engr. Rofiat SULAIMON’s design leadership within a combined 30+ years of practical industry experience."],
         roleAtMoniak: ["At MoniAK, Toks AKINBADE leads the construction division, overseeing site delivery, programme coordination, construction methodology, HSEQ/QAQC implementation, contractor/supplier coordination and client-facing delivery performance.", "His leadership is particularly relevant to Design & Build delivery, where design decisions must be translated into controlled site execution, procurement discipline and safe construction practices.", "His role is directly linked to MoniAK's Design & Build Contractor delivery on Yala Heights and Legacy Court, as well as the company's wider construction management, procurement, logistics and personnel-management portfolio."],
         strengths: [
             { title: "Site Delivery", description: "Proven ability to deliver projects safely, efficiently and to the required quality standards." },
