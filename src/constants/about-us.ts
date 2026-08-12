@@ -15,13 +15,13 @@ export const missionAndVision = [
     {
         title: "Our Mission",
         description:
-            '"To deliver world class Infrastructure Engineering Construction Implementation & Delivery support services by reinforcing our worldwide corporate alliances and upholding top-tier quality and ethical standards"',
+            "To deliver reliable construction implementation and innovative, client-focused solutions that transform communities and create sustainable value across Africa and beyond.",
         image: "/images/dart.png",
     },
     {
         title: "Our Vision",
         description:
-            '"Globally setting a tradition of excellent Construction Implementation & Delivery Support services that continually exceeds customer expectations"',
+            "We are committed to excellence, innovation, quality, safety, sustainability, and integrity while providing cost-effective, timely, and value-driven services that exceed expectations and contribute to the development of resilient infrastructure.",
         image: "/images/bulb-target.svg",
     },
 ]

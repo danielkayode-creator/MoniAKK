@@ -43,12 +43,17 @@ function RouteComponent() {
 
                         <div className="mt-4 flex items-center gap-10 lg:mt-0 lg:gap-20">
                             <p className="text-sm lg:text-lg">
-                                MoniAK is a customer-focused construction and engineering support company delivering
-                                coordinated solutions across Nigeria. Our capabilities span construction planning,
-                                personnel and logistics management, direct labour, plant and equipment sourcing,
-                                material supply, and project implementation support. We work closely with clients and
-                                technical partners throughout each engagement, applying disciplined planning, clear
-                                communication, and quality-focused execution to meet approved project objectives.
+                                Moni-AK is a customer-focused construction company with over fifteen (15) years of
+                                experience delivering reliable Design & Build Implementation, Construction Planning
+                                Support, Procurement Support, Logistics & Operations Support, and Personnel Management
+                                Solutions to clients across Nigeria. Leveraging extensive industry expertise and
+                                strategic collaborations with a global network of experienced professionals, Moni-AK
+                                consistently delivers high-quality, cost-effective, and innovative solutions that meet
+                                the highest quality standards. Our exceptional Project Delivery and Construction
+                                Implementation Management spans every vital phase of every project. From project
+                                lifecycle advisory, technical expertise in planning, engineering procurement, logistics
+                                coordination, and workforce management. Through this integrated approach, we ensure
+                                projects are delivered safely on schedule, within budget, and to the highest standards.
                             </p>
 
                             <ScrollDownBadge className="absolute right-0 bottom-4 shrink-0 *:bg-inherit lg:static" />

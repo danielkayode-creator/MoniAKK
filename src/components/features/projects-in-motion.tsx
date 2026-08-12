@@ -18,6 +18,8 @@ const titles = [
     "Engineering Operations",
     "Site Execution",
 ]
+const filenameTitles = new Set(["Abule Ijesha", "Apapa Local Government", "Freetown"])
+
 
 type ProjectVideo = (typeof videos)[number]
 
@@ -33,7 +35,8 @@ const VideoCard = memo(function VideoCard({
     const cardRef = useRef<HTMLElement>(null)
     const videoRef = useRef<HTMLVideoElement>(null)
     const [shouldLoad, setShouldLoad] = useState(false)
-    const title = titles[index % titles.length]
+    const filename = decodeURIComponent(video.path.split("/").pop() ?? "").replace(/\.[^.]+$/, "").trim()
+    const title = filenameTitles.has(filename) ? filename : titles[index % titles.length]
 
     useEffect(() => {
         const card = cardRef.current
