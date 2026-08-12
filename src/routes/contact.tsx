@@ -21,7 +21,7 @@ function ContactPage() {
         <header className="relative w-contain flex justify-center pt-15 lg:pb-15">
             <div className="space-y-4 text-center lg:space-y-6">
                 <h1 className="text-3xl lg:text-[5rem]">Contact MoniAK</h1>
-                <p className="mx-auto max-w-4xl text-sm lg:text-lg">We&apos;d be pleased to discuss your project, partnership opportunities, or general enquiries. Our team is ready to assist.</p>
+                <p className="mx-auto max-w-4xl text-sm lg:text-lg">We’re here to help and ready to partner with you on your next construction project.</p>
             </div>
         </header>
 
