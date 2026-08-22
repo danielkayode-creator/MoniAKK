@@ -62,7 +62,7 @@ function App() {
                         </p>
                     </div>
 
-                    <div className="relative mx-auto mt-2 flex w-4/5 items-center lg:-mt-7 lg:w-fit">
+                    <div className="relative mx-auto mt-6 flex w-4/5 items-center lg:mt-8 lg:w-fit">
                         <img src="/images/construction-rails.svg" alt="" />
                         <Link
                             to="/"

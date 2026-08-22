@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router"
-import { Building2, Clock3, Handshake, Mail, MapPin, Phone } from "lucide-react"
+import { Clock3, Handshake, Mail, MapPin, Phone } from "lucide-react"
 import EnquiryForm from "@/components/features/forms/enquiry-form"
+import WhatsAppIcon from "@/components/ui/icons/whatsapp"
 import { contactDetails } from "@/constants"
 import { createSeoTags } from "@/lib/seo"
 
@@ -14,7 +15,7 @@ const cards = [
     { label: contactDetails.phone.label, value: contactDetails.phone.value, href: contactDetails.phone.href, icon: Phone },
     { label: contactDetails.email.label, value: contactDetails.email.value, href: contactDetails.email.href, icon: Mail },
     { label: "Office Hours", value: contactDetails.hours, icon: Clock3 },
-    { label: contactDetails.whatsapp.label, value: contactDetails.whatsapp.value, href: contactDetails.whatsapp.href, icon: Building2 },
+    { label: contactDetails.whatsapp.label, value: contactDetails.whatsapp.value, href: contactDetails.whatsapp.href, icon: WhatsAppIcon },
 ]
 function ContactPage() {
     return <main>

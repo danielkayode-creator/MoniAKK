@@ -1,4 +1,6 @@
 import { Link } from "@tanstack/react-router"
+import { Phone } from "lucide-react"
+import WhatsAppIcon from "@/components/ui/icons/whatsapp"
 import { contactDetails, footerLinks, socialLinks } from "@/constants"
 
 const Footer = () => {
@@ -28,7 +30,9 @@ const Footer = () => {
                                     <ul className="space-y-2 lg:space-y-3">
                                         {section.links.map((link, linkIndex) => (
                                             <li key={link.label + linkIndex} className="whitespace-nowrap">
-                                                <Link to={link.to} className="text-sm lg:text-xl">
+                                                <Link to={link.to} className="flex items-center gap-2 text-sm lg:text-xl">
+                                                    {link.to === contactDetails.phone.href && <Phone className="size-4 shrink-0 lg:size-5" aria-hidden="true" />}
+                                                    {link.to === contactDetails.whatsapp.href && <WhatsAppIcon className="size-4 shrink-0 lg:size-5" />}
                                                     {link.label}
                                                 </Link>
                                             </li>
