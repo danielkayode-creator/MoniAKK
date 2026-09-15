@@ -4,9 +4,14 @@
     "description": "Full-service construction and engineering company specializing in civil infrastructure, building construction, and project management in Nigeria.",
     "icons": [
         {
-            "src": "favicon.svg",
-            "sizes": "64x64 32x32 24x24 16x16",
-            "type": "image/svg+xml"
+            "src": "icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
         }
     ],
     "start_url": ".",

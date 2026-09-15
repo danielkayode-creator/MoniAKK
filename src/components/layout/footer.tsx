@@ -11,7 +11,7 @@ const Footer = () => {
                 <div className="w-contain flex flex-col gap-10 border-b border-white pb-5 lg:flex-row lg:gap-30">
                     <div className="flex flex-2/5 flex-col gap-6">
                         <Link to="/" className="w-fit">
-                            <img src="/images/logo.svg" alt="MoniAK logo" />
+                            <img src="/images/White MoniAK 09-10-2026.png" alt="MoniAK logo" width="187" height="136" className="h-[136px] w-[187px] object-contain" />
                         </Link>
                         <p className="text-sm lg:text-lg">
                             Each project we undertake is more than just
