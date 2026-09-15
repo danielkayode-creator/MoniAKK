@@ -23,7 +23,7 @@ const Navbar = () => {
             <div className="w-contain flex flex-col py-2 lg:py-4">
                 <div className="flex items-center justify-between">
                     <Link to="/">
-                        <picture><source media="(min-width: 64rem)" srcSet="/images/White MoniAK 09-10-2026.png" /><img src="/images/Black MoniAK 09-10-2026.png" alt="MoniAK home" width="187" height="136" className="h-[136px] w-[187px] object-contain" /></picture>
+                        <picture><source media="(min-width: 64rem)" srcSet="/images/White MoniAK 09-10-2026.png" /><img src="/images/Black MoniAK 09-10-2026.png" alt="MoniAK home" width="187" height="136" className="size-14 object-contain md:size-16 lg:h-[136px] lg:w-[187px]" /></picture>
                     </Link>
 
                     <ul className="absolute left-1/2 hidden -translate-x-1/2 gap-10 lg:flex">
