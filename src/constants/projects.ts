@@ -27,17 +27,17 @@ export const ourProjects: Array<Project> = [
     },
     {
         slug: "nmpw-pedestrian-walkway",
-        title: "Non-Motorized Pedestrian Walkway (NMPW) Project",
+        title: "Non-Motorized Pedestrian Walkway",
         description: {
             brief: "Builds safe under-bridge pedestrian walkways along the Lagos Red Line corridor.",
             details:
-                "The Non-Motorized Pedestrian Walkway (NMPW) Project is LAMATA's flagship sustainable mobility initiative along the Lagos Red Line corridor, covering Oyingbo, Yaba, Mushin, and Ikeja. Designed as a clean, green solution to reduce carbon emissions and improve air quality, it transforms under-bridge spaces into safe pedestrian pathways. MoniAK has been appointed as the Principal Contractor to construct and deliver these facilities, including all associated civil, structural, and finishing works, breathing new life into these high-density areas.",
+                "The Non-Motorized Pedestrian Walkway is LAMATA's flagship sustainable mobility initiative along the Lagos Red Line corridor, covering Oyingbo, Yaba, Mushin, and Ikeja. Designed as a clean, green solution to reduce carbon emissions and improve air quality, it transforms under-bridge spaces into safe pedestrian pathways. MoniAK has been appointed as the Principal Contractor to construct and deliver these facilities, including all associated civil, structural, and finishing works, breathing new life into these high-density areas.",
         },
         designObjective: ["Building Layout", "Accessibility", "Sustainability", "Amenities"],
         projectScope: null,
         images: {
-            displayImage: "/images/nmpw.png",
-            gallery: ["/images/nmpw-1.png", "/images/nmpw-2.png", "/images/nmpw-3.png", "/images/nmpw-4.png"],
+            displayImage: "/images/nmpw R.png",
+            gallery: ["/images/nmpw R.png", "/images/nmpw R 2.jpeg", "/images/nmpw R 3.jpg", "/images/nmpw R 4.png", "/images/nmpw R 5.png"],
         },
     },
     {
@@ -107,7 +107,7 @@ export const ourProjects: Array<Project> = [
             },
         ],
         images: {
-            displayImage: "/images/gate-house.png",
+            displayImage: "/images/gate-house R.png",
             gallery: ["/images/gate-house-1.png", "/images/gate-house-2.png"],
         },
     },
@@ -141,7 +141,7 @@ export const ourProjects: Array<Project> = [
             },
         ],
         images: {
-            displayImage: "/images/iju-station-building.png",
+            displayImage: "/images/iju-station-building R.png",
             gallery: [
                 "/images/iju-station-building-1.jpg",
                 "/images/iju-station-building-2.png",
@@ -161,7 +161,7 @@ export const ourProjects: Array<Project> = [
         designObjective: null,
         projectScope: null,
         images: {
-            displayImage: "/images/mushin-primary-school.png",
+            displayImage: "/images/mushin-primary-school R.png",
             gallery: [
                 "/images/mushin-primary-school-1.png",
                 "/images/mushin-primary-school-2.png",

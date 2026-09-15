@@ -32,7 +32,7 @@ const Footer = () => {
                                             <li key={link.label + linkIndex} className="whitespace-nowrap">
                                                 <Link to={link.to} className="flex items-center gap-2 text-sm lg:text-xl">
                                                     {link.to === contactDetails.phone.href && <Phone className="size-4 shrink-0 lg:size-5" aria-hidden="true" />}
-                                                    {link.to === contactDetails.whatsapp.href && <WhatsAppIcon className="size-4 shrink-0 lg:size-5" />}
+                                                    {contactDetails.whatsapp.numbers.some(({ href }) => link.to === href) && <WhatsAppIcon className="size-4 shrink-0 lg:size-5" />}
                                                     {link.label}
                                                 </Link>
                                             </li>

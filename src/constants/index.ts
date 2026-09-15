@@ -65,11 +65,11 @@ export const services = [
 
 export const recentProjects = [
     { src: "/images/proposed-apapa-lga.png", alt: "Apapa multipurpose building project" },
-    { src: "/images/nmpw.png", alt: "Non-motorized pedestrian walkway project" },
-    { src: "/images/yala-heights.png", alt: "Yala Heights multi-storey development" },
-    { src: "/images/gate-house.png", alt: "Rail corridor gate house replacement project" },
-    { src: "/images/iju-station-building.png", alt: "Iju railway station building project" },
-    { src: "/images/mushin-primary-school.png", alt: "Mushin Primary School reconstruction project" },
+    { src: "/images/nmpw R.png", alt: "Non-Motorized Pedestrian Walkway" },
+    { src: "/images/yala-heights R.jpg", alt: "Yala Heights multi-storey development" },
+    { src: "/images/gate-house R.png", alt: "Rail corridor gate house replacement project" },
+    { src: "/images/iju-station-building R.png", alt: "Iju railway station building project" },
+    { src: "/images/mushin-primary-school R.png", alt: "Mushin Primary School reconstruction project" },
 ]
 
 export type PartnerLogo = {
@@ -89,8 +89,14 @@ export const trustedBy: ReadonlyArray<PartnerLogo> = [
 ]
 export const contactDetails = {
     email: { label: "Email Us", value: "info@moniakgroup.com", href: "mailto:info@moniakgroup.com" },
-    phone: { label: "Call Us", value: "+234 813 465 2742", href: "tel:+2348134652742" },
-    whatsapp: { label: "WhatsApp Us", value: "+234 908 330 1780", href: "https://wa.me/2349083301780" },
+    phone: { label: "Call Us", value: "+234 813 465 2745", href: "tel:+2348134652745" },
+    whatsapp: {
+        label: "WhatsApp Us",
+        numbers: [
+            { value: "+234 908 330 1780", href: "https://wa.me/2349083301780" },
+            { value: "+234 813 465 2745", href: "https://wa.me/2348134652745" },
+        ],
+    },
     address: "No 2, Faneye Street, Off Borno Way, Alagomeji, Yaba, Lagos",
     hours: "8am–5pm",
 } as const
@@ -148,10 +154,10 @@ export const footerLinks = [
                 label: contactDetails.phone.value,
                 to: contactDetails.phone.href,
             },
-            {
-                label: contactDetails.whatsapp.value,
-                to: contactDetails.whatsapp.href,
-            },
+            ...contactDetails.whatsapp.numbers.map(({ value, href }) => ({
+                label: value,
+                to: href,
+            })),
             {
                 label: contactDetails.email.value,
                 to: contactDetails.email.href,

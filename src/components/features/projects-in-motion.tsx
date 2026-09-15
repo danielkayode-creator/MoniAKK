@@ -12,11 +12,11 @@ const videos = Object.entries(videoModules)
     .map(([path, src]) => ({ path, src }))
 
 const titles = [
-    "Infrastructure Development",
-    "Construction Progress",
-    "Project Delivery",
-    "Engineering Operations",
-    "Site Execution",
+    "Infrastructure Development Works",
+    "Construction Progress & Implementation",
+    "Project Delivery & Implementation",
+    "Engineering & Technical Execution",
+    "Construction & Site Execution",
 ]
 const filenameTitles = new Set(["Abule Ijesha", "Apapa Local Government", "Freetown"])
 
@@ -127,7 +127,7 @@ export default function ProjectsInMotion() {
         >
             <div className="mx-auto mb-10 max-w-4xl text-center lg:mb-14">
                 <p className="mb-3 text-xs font-semibold tracking-[0.24em] text-white/60 uppercase">
-                    On-site perspective
+                    Design Perspective
                 </p>
                 <h2 id="projects-in-motion-title" className="text-3xl leading-tight lg:text-5xl">
                     Projects in Motion

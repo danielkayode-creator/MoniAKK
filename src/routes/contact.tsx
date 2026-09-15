@@ -15,7 +15,7 @@ const cards = [
     { label: contactDetails.phone.label, value: contactDetails.phone.value, href: contactDetails.phone.href, icon: Phone },
     { label: contactDetails.email.label, value: contactDetails.email.value, href: contactDetails.email.href, icon: Mail },
     { label: "Office Hours", value: contactDetails.hours, icon: Clock3 },
-    { label: contactDetails.whatsapp.label, value: contactDetails.whatsapp.value, href: contactDetails.whatsapp.href, icon: WhatsAppIcon },
+    { label: contactDetails.whatsapp.label, links: contactDetails.whatsapp.numbers, icon: WhatsAppIcon },
 ]
 function ContactPage() {
     return <main>
@@ -29,10 +29,10 @@ function ContactPage() {
         <section aria-labelledby="contact-details-title" className="w-contain py-15">
             <h2 id="contact-details-title" className="text-center text-2xl lg:text-[2.8125rem]">Connect with our team</h2>
             <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-                {cards.map(({ label, value, href, icon: Icon }) => <article key={label} className="rounded-2xl bg-primary p-6 lg:p-8">
+                {cards.map(({ label, value, href, links, icon: Icon }) => <article key={label} className="rounded-2xl bg-primary p-6 lg:p-8">
                     <span className="mb-6 flex size-11 items-center justify-center rounded-full bg-primary-light"><Icon aria-hidden="true" /></span>
                     <h3 className="font-montserrat text-sm font-semibold lg:text-lg">{label}</h3>
-                    {href ? <a href={href} className="mt-2 block break-words text-sm transition-colors hover:text-white/70 lg:text-base">{value}</a> : <p className="mt-2 text-sm lg:text-base">{value}</p>}
+                    {links ? links.map((link) => <a key={link.href} href={link.href} className="mt-2 block break-words text-sm transition-colors hover:text-white/70 lg:text-base">{link.value}</a>) : href ? <a href={href} className="mt-2 block break-words text-sm transition-colors hover:text-white/70 lg:text-base">{value}</a> : <p className="mt-2 text-sm lg:text-base">{value}</p>}
                 </article>)}
             </div>
         </section>
