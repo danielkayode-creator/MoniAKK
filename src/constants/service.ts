@@ -14,14 +14,14 @@ export const ourServices = [
         images: ["/images/renovation-1.png"],
     },
     {
-        title: "Engineering Design",
+        title: "Design and Build Contractor",
         description:
             "Step into a world of innovative solutions with MoniAK. Beyond construction, we pride ourselves on offering cutting-edge engineering design services. Melding creativity with scientific precision, our team navigates complexities to bring visionary concepts to life. At MoniAK, we redefine what's possible in engineering design, shaping the future with solutions that blend functionality, efficiency, and unmatched expertise. Choose us for a transformative experience where every design is a testament to our commitment to excellence.",
         displayImage: "/images/engineering-design-display.png",
         images: ["/images/engineering-design-1.png"],
     },
     {
-        title: "Project Management",
+        title: "Construction Management",
         description:
             "At MoniAK, we not only build structures; we orchestrate success. With our specialized project management services, we navigate the complexities of every endeavor with precision and expertise. From conception to completion, our dedicated team ensures seamless coordination, timely delivery, and cost-effective solutions. Trust MoniAK to be your project management partner, where every detail is meticulously handled, and every project is a testament to our commitment to excellence. Elevate your construction experience with us, where your vision is not just realized but optimized for success.",
         displayImage: "/images/project-management-display.png",

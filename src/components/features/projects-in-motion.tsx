@@ -9,7 +9,7 @@ const videoModules = import.meta.glob<string>("/public/videos/projects/*.{mp4,we
 
 const videos = Object.entries(videoModules)
     .sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" }))
-    .map(([path, src]) => ({ path, src }))
+    .map(([path, src]) => ({ path, src: src.replace(/^\/public\//, "/") }))
 
 const titles = [
     "Infrastructure Development Works",
@@ -19,7 +19,6 @@ const titles = [
     "Construction & Site Execution",
 ]
 const filenameTitles = new Set(["Abule Ijesha", "Apapa Local Government", "Freetown"])
-
 
 type ProjectVideo = (typeof videos)[number]
 
@@ -34,8 +33,12 @@ const VideoCard = memo(function VideoCard({
 }) {
     const cardRef = useRef<HTMLElement>(null)
     const videoRef = useRef<HTMLVideoElement>(null)
+    const previewing = useRef(false)
+    const interacted = useRef(false)
     const [shouldLoad, setShouldLoad] = useState(false)
-    const filename = decodeURIComponent(video.path.split("/").pop() ?? "").replace(/\.[^.]+$/, "").trim()
+    const filename = decodeURIComponent(video.path.split("/").pop() ?? "")
+        .replace(/\.[^.]+$/, "")
+        .trim()
     const title = filenameTitles.has(filename) ? filename : titles[index % titles.length]
 
     useEffect(() => {
@@ -66,16 +69,19 @@ const VideoCard = memo(function VideoCard({
     }, [shouldLoad])
 
     const playPreview = () => {
-        if (reduceMotion || !window.matchMedia("(hover: hover) and (pointer: fine)").matches) return
+        if (interacted.current || reduceMotion || !window.matchMedia("(hover: hover) and (pointer: fine)").matches)
+            return
         const player = videoRef.current
         if (!player || !player.paused) return
         player.muted = true
+        previewing.current = true
         void player.play().catch(() => undefined)
     }
 
     const stopPreview = () => {
         const player = videoRef.current
-        if (!player || player.paused) return
+        if (!player || !previewing.current) return
+        previewing.current = false
         player.pause()
         player.currentTime = 0
     }
@@ -89,6 +95,14 @@ const VideoCard = memo(function VideoCard({
             transition={{ duration: 0.55, delay: Math.min(index * 0.08, 0.24), ease: "easeOut" }}
             onMouseEnter={playPreview}
             onMouseLeave={stopPreview}
+            onPointerDownCapture={() => {
+                interacted.current = true
+                previewing.current = false
+            }}
+            onKeyDownCapture={() => {
+                interacted.current = true
+                previewing.current = false
+            }}
             className="group overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-[0_18px_50px_rgba(0,0,0,0.22)] transition duration-500 focus-within:border-white/40 hover:-translate-y-1 hover:border-white/20 hover:shadow-[0_24px_60px_rgba(0,0,0,0.32)]"
         >
             <div className="aspect-video overflow-hidden bg-black">
@@ -96,12 +110,16 @@ const VideoCard = memo(function VideoCard({
                     ref={videoRef}
                     src={shouldLoad ? video.src : undefined}
                     controls
+                    controlsList="nodownload"
+                    onContextMenu={(event) => event.preventDefault()}
+                    draggable={false}
+                    onDragStart={(event) => event.preventDefault()}
                     playsInline
                     preload="metadata"
                     aria-label={`${title} project footage`}
                     className="size-full object-cover transition-transform duration-700 group-hover:scale-[1.025] focus-visible:outline-2 focus-visible:outline-offset-[-3px] focus-visible:outline-white"
                 >
-                    Your browser does not support HTML5 video. Project footage: {video.path}.
+                    Your browser does not support HTML5 video.
                 </video>
             </div>
             <div className="p-5 lg:p-6">

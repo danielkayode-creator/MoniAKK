@@ -4,10 +4,11 @@ import { standardSchemaResolver } from "@hookform/resolvers/standard-schema"
 import { useForm } from "react-hook-form"
 import { useState } from "react"
 import { CheckCircle2, LoaderCircle } from "lucide-react"
-import { z } from "zod/v4"
 
 import { Link } from "@tanstack/react-router"
-import { contactDetails } from "@/constants"
+import type { EnquiryData } from "@/constants/enquiry"
+import { enquiryErrorMessage, enquirySchema, enquiryServiceOptions, enquirySuccessMessage } from "@/constants/enquiry"
+import { submitEnquiry } from "@/lib/enquiry.functions"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import FormField from "@/components/ui/form-field"
@@ -15,40 +16,9 @@ import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
 
-const enquirySchema = z.object({
-    name: z.string().min(1, "Please enter your name"),
-    email: z.email("Please enter a valid email address"),
-    telephone: z.string().min(1, "Please enter your telephone number"),
-    projectType: z.string().min(1, "Please select a project type"),
-    message: z.string().min(1, "Please tell us about your project"),
-    marketingConsent: z.boolean().optional(),
-})
-
-type TEnquiryFormData = z.infer<typeof enquirySchema>
-
-async function submitEnquiry(data: TEnquiryFormData) {
-    const endpoint = import.meta.env.VITE_CONTACT_FORM_ENDPOINT
-    if (endpoint) {
-        const response = await fetch(endpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) })
-        if (!response.ok) throw new Error("We could not send your enquiry. Please try again.")
-        return "sent"
-    }
-    const body = [data.name, data.email, data.telephone, data.projectType, "", data.message].join("\n")
-    window.location.href = `${contactDetails.email.href}?subject=Project%20enquiry&body=${encodeURIComponent(body)}`
-    return "email"
-}
-
-const projectTypes = [
-    { value: "construction", label: "Construction" },
-    { value: "renovation", label: "Renovation" },
-    { value: "engineering-design", label: "Engineering Design" },
-    { value: "project-management", label: "Project Management" },
-    { value: "other", label: "Other Enquiry" },
-]
-
 const EnquiryForm = ({ projectName }: { projectName?: string }) => {
     const [feedback, setFeedback] = useState<{ type: "success" | "error"; text: string } | null>(null)
-    const form = useForm<TEnquiryFormData>({
+    const form = useForm<EnquiryData>({
         resolver: standardSchemaResolver(enquirySchema),
         defaultValues: {
             name: "",
@@ -60,14 +30,15 @@ const EnquiryForm = ({ projectName }: { projectName?: string }) => {
         },
     })
 
-    const onSubmit = async (data: TEnquiryFormData) => {
+    const onSubmit = async (data: EnquiryData) => {
         setFeedback(null)
         try {
-            const result = await submitEnquiry(data)
-            setFeedback({ type: "success", text: result === "sent" ? "Thank you. Your enquiry has been sent successfully." : "Your enquiry has been prepared in your email application." })
+            const result = await submitEnquiry({ data })
+            if (!result.success) throw new Error(enquiryErrorMessage)
+            setFeedback({ type: "success", text: enquirySuccessMessage })
             form.reset()
-        } catch (error) {
-            setFeedback({ type: "error", text: error instanceof Error ? error.message : "We could not send your enquiry." })
+        } catch {
+            setFeedback({ type: "error", text: enquiryErrorMessage })
         }
     }
 
@@ -118,7 +89,7 @@ const EnquiryForm = ({ projectName }: { projectName?: string }) => {
                                 <SelectValue placeholder="Project type" />
                             </SelectTrigger>
                             <SelectContent>
-                                {projectTypes.map((option, index) => (
+                                {enquiryServiceOptions.map((option, index) => (
                                     <SelectItem key={option.value + index} value={option.value}>
                                         {option.label}
                                     </SelectItem>

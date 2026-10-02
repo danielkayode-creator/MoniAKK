@@ -1,6 +1,6 @@
 export const whatWeOffer = [
     "Construction planning",
-    "Project Management/Consultancy",
+    "Construction Management/Consultancy",
     "Logistics Management & Direct Labor",
     "Sourcing and Leasing of Plant and Equipment",
     "Installation of Electrical/Mechanical equipment",

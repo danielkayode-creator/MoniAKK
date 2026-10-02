@@ -54,11 +54,11 @@ export const services = [
         to: "/services",
     },
     {
-        label: "Engineering Design",
+        label: "Design and Build Contractor",
         to: "/services",
     },
     {
-        label: "Project Management",
+        label: "Construction Management",
         to: "/services",
     },
 ]
@@ -138,11 +138,11 @@ export const footerLinks = [
                 to: "/services",
             },
             {
-                label: "Project Management",
+                label: "Construction Management",
                 to: "/services",
             },
             {
-                label: "Engineering Design",
+                label: "Design and Build Contractor",
                 to: "/services",
             },
         ],
