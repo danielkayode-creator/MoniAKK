@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/dialog"
 import ArrowRight from "@/components/ui/icons/arrow-right"
 import ArrowUpRight from "@/components/ui/icons/arrow-up-right"
-import { keyFeatures, recentProjects, services, trustedBy } from "@/constants"
+import { featuredPartner, keyFeatures, recentProjects, services, trustedBy } from "@/constants"
 import { createSeoTags } from "@/lib/seo"
 import { cn } from "@/lib/utils"
 
@@ -258,6 +258,41 @@ function App() {
                         <CarouselPrevious className="left-4 bg-primary" />
                         <CarouselNext className="right-4 bg-primary" />
                     </Carousel>
+                </div>
+            </section>
+
+            {/* Our Partners */}
+            <section className="bg-[#020d05] py-12 md:py-16" aria-labelledby="our-partners-heading">
+                <div className="w-contain">
+                    <div className="grid gap-8 border-y border-primary/60 py-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:items-end md:py-10 lg:gap-16">
+                        <div>
+                            <p className="mb-3 text-xs font-semibold tracking-[0.24em] text-primary-light">
+                                OUR PARTNERS
+                            </p>
+                            <h2
+                                id="our-partners-heading"
+                                className="text-2xl leading-tight md:text-3xl lg:text-[2.8125rem]"
+                            >
+                                Building Better, Together.
+                            </h2>
+                        </div>
+
+                        <div className="space-y-4">
+                            <h3 className="text-xl text-primary-light md:text-2xl">{featuredPartner.displayName}</h3>
+                            <p className="max-w-2xl text-sm leading-6 text-white/80 md:text-base md:leading-7">
+                                {featuredPartner.description}
+                            </p>
+                            <Link
+                                to={featuredPartner.pagePath}
+                                className={cn(
+                                    buttonVariants({ variant: "secondary" }),
+                                    "h-auto rounded-lg px-5 py-3 font-semibold",
+                                )}
+                            >
+                                Learn More <ArrowRight className="size-4" />
+                            </Link>
+                        </div>
+                    </div>
                 </div>
             </section>
 

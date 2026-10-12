@@ -72,6 +72,15 @@ export const recentProjects = [
     { src: "/images/mushin-primary-school R.png", alt: "Mushin Primary School reconstruction project" },
 ]
 
+export const featuredPartner = {
+    name: "Sulink Global",
+    displayName: "Sulink Building Materials",
+    pagePath: "/partners/sulink",
+    description:
+        "Explore building-material sourcing, custom furnishing, and installation services for residential and commercial projects.",
+    url: "https://ocnr280sr6ls.doubaoapps.com/app/app_17fb10tw7zs/#how",
+} as const
+
 export type PartnerLogo = {
     name: string
     image: string | null
@@ -123,6 +132,10 @@ export const footerLinks = [
             {
                 label: "Contact Us",
                 to: "/contact",
+            },
+            {
+                label: featuredPartner.displayName,
+                to: featuredPartner.pagePath,
             },
         ],
     },
