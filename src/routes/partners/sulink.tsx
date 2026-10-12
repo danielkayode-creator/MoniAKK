@@ -45,18 +45,46 @@ export const Route = createFileRoute("/partners/sulink")({
 function SulinkPartnerPage() {
     return (
         <main>
-            <header className="w-contain py-16 md:py-20 lg:py-24">
-                <div className="max-w-5xl">
-                    <p className="text-xs font-semibold tracking-[0.24em] text-primary-light">OUR PARTNERS</p>
-                    <h1 className="mt-5 text-3xl leading-tight md:text-5xl lg:text-[5rem]">Sulink Global × Moni-AK</h1>
-                    <p className="mt-6 max-w-4xl font-michroma text-xl leading-relaxed text-white/75 md:text-2xl lg:text-3xl">
-                        From Global Sourcing to Local Construction.
-                    </p>
-                    <p className="mt-8 max-w-3xl text-sm leading-7 text-white/80 md:text-lg md:leading-8">
-                        This collaboration connects complementary capabilities for residential and commercial projects:
-                        Sulink Global's access to building materials, furnishing, and installation services, alongside
-                        MoniAK's construction, engineering, and project delivery experience in Nigeria.
-                    </p>
+            <header className="relative overflow-hidden border-b border-primary/40">
+                <div
+                    className="pointer-events-none absolute -top-24 -right-32 size-72 rounded-full border border-primary/30 sm:size-96"
+                    aria-hidden="true"
+                />
+                <div
+                    className="pointer-events-none absolute top-16 -right-20 size-48 rounded-full border border-primary/20 sm:size-72"
+                    aria-hidden="true"
+                />
+
+                <div className="w-contain grid gap-12 py-16 md:py-20 lg:grid-cols-[minmax(0,1.3fr)_minmax(18rem,0.7fr)] lg:items-end lg:gap-16 lg:py-24">
+                    <div className="relative max-w-5xl">
+                        <p className="text-xs font-semibold tracking-[0.24em] text-primary-light">OUR PARTNERS</p>
+                        <h1 className="mt-5 text-3xl leading-tight md:text-5xl lg:text-[5rem]">
+                            Sulink Global × Moni-AK
+                        </h1>
+                        <p className="mt-6 max-w-4xl font-michroma text-xl leading-relaxed text-white/75 md:text-2xl lg:text-3xl">
+                            From Global Sourcing to Local Construction.
+                        </p>
+                        <p className="mt-8 max-w-3xl text-sm leading-7 text-white/80 md:text-lg md:leading-8">
+                            This collaboration connects complementary capabilities for residential and commercial
+                            projects: Sulink Global's access to building materials, furnishing, and installation
+                            services, alongside MoniAK's construction, engineering, and project delivery experience in
+                            Nigeria.
+                        </p>
+                    </div>
+
+                    <div className="relative grid gap-3 rounded-2xl border border-primary/50 bg-primary/10 p-4 backdrop-blur-sm sm:grid-cols-3 sm:p-5 lg:grid-cols-1">
+                        {sulinkServices.map((service, index) => (
+                            <div
+                                key={service.title}
+                                className="flex items-center gap-4 rounded-xl border border-white/10 bg-black/20 px-4 py-4"
+                            >
+                                <span className="grid size-9 shrink-0 place-items-center rounded-full border border-primary-light/50 font-michroma text-xs text-primary-light">
+                                    {String(index + 1).padStart(2, "0")}
+                                </span>
+                                <span className="text-sm leading-5 font-semibold text-white/85">{service.title}</span>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </header>
 
